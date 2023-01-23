@@ -33,7 +33,7 @@ class TabletView extends StatelessWidget {
               children: [
                 const TextHeadlineSmall(text: "Skill"),
                 SkillContent(
-                    widthImage: Breakpoint.mobile,
+                    widthBox: Breakpoint.mobile,
                     heightBox: size.height * 0.22,
                     padding: Sizes.p8),
               ],

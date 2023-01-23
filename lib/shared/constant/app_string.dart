@@ -1,12 +1,14 @@
+import 'package:portofolio/shared/utils/calculate.dart';
+
 class AppString {
   // personal information
   static const String fullName = "Muhammad Syamsul Arifin";
-  static const String city = "Jember, Indonesia";
+  static const String city = "Denpasar, Indonesia";
   static const String phone = "+6289681408226";
   static const String email = "msarifin29@gmail.com";
   static const String jobs = "Flutter Developer";
-  static const String about =
-      """Saya memiliki pengalaman 1.5 th sebagai Flutter Developer, saya pernah terlibat dalam mengembangkan sebuah proyek baik secara individu maupun team, dan saya aktif di komunitas Flutter User Grup Indonesia.""";
+  static String about =
+      """Saya memiliki pengalaman $experience th sebagai Flutter Developer, saya pernah terlibat dalam mengembangkan sebuah proyek baik secara individu maupun team, dan saya aktif di komunitas Flutter User Grup Indonesia.""";
 
   // assets
   static const myBioskop = "assets/images/my_bioskop.jpg";

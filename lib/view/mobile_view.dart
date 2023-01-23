@@ -34,7 +34,7 @@ class MobileView extends StatelessWidget {
                 children: [
                   const TextHeadlineSmall(text: "Skill"),
                   SkillContent(
-                      widthImage: Breakpoint.mobile,
+                      widthBox: Breakpoint.mobile - 20.0,
                       heightBox: size.height * 0.25,
                       padding: Sizes.p8),
                 ],

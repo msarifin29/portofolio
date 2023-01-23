@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portofolio/shared/utils/funtion_helper.dart';
 import 'package:portofolio/view/widgets/about_me.dart';
+import 'package:portofolio/view/widgets/text_head_line_small.dart';
 import 'logo_button.dart';
 import '../../shared/constant/app_string.dart';
 import '../../shared/constant/sizes.dart';
@@ -21,32 +22,44 @@ class ProfileContent extends StatelessWidget {
         padding: const EdgeInsets.all(Sizes.p12),
         child: Column(
           children: [
-            Text(
-              "About me",
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall!
-                  .copyWith(color: Colors.white),
+            const TextHeadlineSmall(text: "About me"),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                  horizontal: Sizes.p32, vertical: Sizes.p24),
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(Sizes.p20),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(1.0),
+                  child: AspectRatio(
+                    aspectRatio: 3 / 4,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(Sizes.p20),
+                      child: const Image(
+                        image: AssetImage(AppString.photo),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
-            gapH12,
-            CircleAvatar(
-              radius: Sizes.p100,
-              backgroundColor: Colors.grey[300],
-              backgroundImage: const AssetImage(AppString.photo),
-            ),
-            gapH12,
             Text(
               AppString.fullName,
               style: Theme.of(context)
                   .textTheme
                   .titleMedium!
-                  .copyWith(color: Colors.orange),
+                  .copyWith(color: Colors.white),
               textAlign: TextAlign.center,
             ),
             gapH12,
             Text(
               AppString.jobs,
-              style: Theme.of(context).textTheme.titleSmall!,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleSmall!
+                  .copyWith(color: Colors.white),
             ),
             gapH12,
             Row(
@@ -54,11 +67,14 @@ class ProfileContent extends StatelessWidget {
               children: [
                 const Icon(
                   Icons.location_pin,
-                  color: Colors.orange,
+                  color: Colors.white,
                 ),
                 Text(
                   AppString.city,
-                  style: Theme.of(context).textTheme.titleSmall!,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleSmall!
+                      .copyWith(color: Colors.white),
                 ),
               ],
             ),

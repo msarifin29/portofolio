@@ -40,7 +40,7 @@ class DesktopView extends StatelessWidget {
                     children: [
                       const TextHeadlineSmall(text: "Skill"),
                       SkillContent(
-                          widthImage: Breakpoint.mobile,
+                          widthBox: Breakpoint.mobile,
                           heightBox: size.height * 0.2,
                           padding: Sizes.p4),
                     ],

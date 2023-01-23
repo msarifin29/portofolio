@@ -7,12 +7,12 @@ import '../../shared/data/skill.dart';
 class SkillContent extends StatelessWidget {
   const SkillContent({
     Key? key,
-    required this.widthImage,
+    required this.widthBox,
     required this.heightBox,
     required this.padding,
   }) : super(key: key);
 
-  final double widthImage;
+  final double widthBox;
   final double heightBox;
   final double padding;
 
@@ -38,7 +38,7 @@ class SkillContent extends StatelessWidget {
               subtitle: Row(
                 children: [
                   LinearPercentIndicator(
-                    width: widthImage,
+                    width: widthBox,
                     lineHeight: Sizes.p12,
                     percent: persentase / 100,
                     barRadius: const Radius.circular(Sizes.p4),

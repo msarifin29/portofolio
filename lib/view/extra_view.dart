@@ -45,7 +45,7 @@ class ExtraView extends StatelessWidget {
                   const TextHeadlineSmall(text: "Skill"),
                   Expanded(
                     child: SkillContent(
-                        widthImage: Sizes.p200,
+                        widthBox: Sizes.p200,
                         heightBox: size.height * 0.8,
                         padding: Sizes.p12),
                   ),
