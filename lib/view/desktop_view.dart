@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/view/widgets/profile_content.dart';
 
-import '../shared/constant/break_point.dart';
 import '../shared/constant/sizes.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/project_content.dart';
-import 'widgets/skill_content.dart';
 import 'widgets/text_head_line_small.dart';
 
 class DesktopView extends StatelessWidget {
@@ -12,40 +11,40 @@ class DesktopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Portofolio"),
-        centerTitle: true,
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: CustomAppBar(),
       ),
       body: Row(
         children: [
-          const ProfileContent(),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: Sizes.p4),
+              child: Card(
+                color: Theme.of(context).cardColor,
+                child: const ProfileContent(),
+              ),
+            ),
+          ),
           Expanded(
             flex: 2,
-            child: Container(
-              height: size.height,
-              padding: const EdgeInsets.symmetric(horizontal: Sizes.p12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const TextHeadlineSmall(
-                    text: "Personal Project",
-                  ),
-                  gapH8,
-                  ProjectContent(heightBox: size.height * 0.6),
-                  gapH8,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const TextHeadlineSmall(text: "Skill"),
-                      SkillContent(
-                          widthBox: Breakpoint.mobile,
-                          heightBox: size.height * 0.2,
-                          padding: Sizes.p4),
-                    ],
-                  ),
-                ],
+            child: Padding(
+              padding: const EdgeInsets.only(top: Sizes.p4),
+              child: Card(
+                color: Theme.of(context).cardColor,
+                child: ListView(
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      child: const TextHeadlineSmall(
+                        text: "Personal Project",
+                      ),
+                    ),
+                    gapH8,
+                    const ProjectContent(),
+                  ],
+                ),
               ),
             ),
           ),

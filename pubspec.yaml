@@ -43,6 +43,9 @@ dependencies:
   carousel_slider: ^4.2.1
   percent_indicator: ^4.2.2
   material_design_icons_flutter: ^6.0.7096
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  day_night_switcher: ^0.2.0+1
 
 dev_dependencies:
   flutter_test:

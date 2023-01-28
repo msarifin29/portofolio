@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:portofolio/view/widgets/profile_content.dart';
 import 'package:portofolio/view/widgets/project_content.dart';
 
-import '../shared/constant/break_point.dart';
 import '../shared/constant/sizes.dart';
-import 'widgets/skill_content.dart';
+import 'widgets/custom_app_bar.dart';
 import 'widgets/text_head_line_small.dart';
 
 class MobileView extends StatelessWidget {
@@ -12,36 +11,29 @@ class MobileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Portofolio"),
-        centerTitle: true,
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(60.0),
+        child: CustomAppBar(),
       ),
-      drawer: const ProfileContent(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: Sizes.p12),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const TextHeadlineSmall(text: "Personal project"),
-              gapH12,
-              ProjectContent(heightBox: size.height * 0.55),
-              gapH12,
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const TextHeadlineSmall(text: "Skill"),
-                  SkillContent(
-                      widthBox: Breakpoint.mobile - 20.0,
-                      heightBox: size.height * 0.25,
-                      padding: Sizes.p8),
-                ],
-              ),
-            ],
+      body: ListView(
+        children: [
+          const ProfileContent(),
+          gapH12,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: Sizes.p18),
+            child: Divider(
+              height: 2.0,
+              color: Theme.of(context).iconTheme.color,
+            ),
           ),
-        ),
+          Container(
+            alignment: Alignment.center,
+            child: const TextHeadlineSmall(text: "Personal project"),
+          ),
+          gapH12,
+          const ProjectContent(),
+        ],
       ),
     );
   }

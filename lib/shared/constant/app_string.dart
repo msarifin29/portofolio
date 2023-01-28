@@ -19,6 +19,8 @@ class AppString {
   static const github = "assets/images/github.svg";
   static const wa = "assets/images/wa.svg";
   static const logoEmail = "assets/images/email.svg";
+  static const utLogo = "assets/images/ut.png";
+  static const medikbud = "assets/images/mendikbud.png";
 
   // End point url
   static const String myBioskopUrl =
