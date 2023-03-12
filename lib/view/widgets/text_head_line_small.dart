@@ -1,21 +1,18 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class TextHeadlineSmall extends StatelessWidget {
-  const TextHeadlineSmall({
-    Key? key,
-    required this.text,
-  }) : super(key: key);
+// class TextHeadlineSmall extends StatelessWidget {
+//   const TextHeadlineSmall({
+//     Key? key,
+//     required this.text,
+//   }) : super(key: key);
 
-  final String text;
+//   final String text;
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: Theme.of(context)
-          .textTheme
-          .headlineSmall!
-          .copyWith(color: Colors.orange),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       text,
+//       style: Theme.of(context).textTheme.headlineMedium,
+//     );
+//   }
+// }

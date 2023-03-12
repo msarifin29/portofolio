@@ -21,7 +21,7 @@ class ProjectContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                data.title,
+                "${data.id}. ${data.title}",
                 style: Theme.of(context).textTheme.headlineSmall!,
               ),
               gapH8,

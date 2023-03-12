@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:portofolio/service/hive_service.dart';
 import 'package:portofolio/view/desktop_view.dart';
 import 'package:portofolio/view/extra_view.dart';
@@ -22,22 +21,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder<Box>(
-        valueListenable: HiveService.instance.getThemeMode().listenable(),
-        builder: (context, box, _) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            theme: HiveService.instance.isDarkTheme(false)
-                ? darkTheme()
-                : lightTheme(),
-            // darkTheme: ThemeData.dark(useMaerial3: true),
-            home: const ResponsiveLayout(
-              mobileView: MobileView(),
-              tabletView: TabletView(),
-              dekstopView: DesktopView(),
-              extraLarge: ExtraView(),
-            ),
-          );
-        });
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: darkTheme(),
+      home: const ResponsiveLayout(
+        mobileView: MobileView(),
+        tabletView: TabletView(),
+        dekstopView: DesktopView(),
+        extraLarge: ExtraView(),
+      ),
+    );
   }
 }

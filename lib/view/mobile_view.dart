@@ -1,38 +1,75 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:portofolio/shared/constant/app_color.dart';
+
+import 'package:portofolio/shared/constant/sizes.dart';
+import 'package:portofolio/view/screen/project_screen.dart';
+import 'package:portofolio/view/screen/skill_screen.dart';
 import 'package:portofolio/view/widgets/profile_content.dart';
-import 'package:portofolio/view/widgets/project_content.dart';
 
-import '../shared/constant/sizes.dart';
 import 'widgets/custom_app_bar.dart';
-import 'widgets/text_head_line_small.dart';
+import 'widgets/photo_profile_widget.dart';
 
-class MobileView extends StatelessWidget {
+class MobileView extends StatefulWidget {
   const MobileView({super.key});
 
   @override
+  State<MobileView> createState() => _MobileViewState();
+}
+
+class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(60.0),
-        child: CustomAppBar(),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: CustomAppBar(
+          tabBar: TabBar(
+              controller: _tabController,
+              indicatorPadding: const EdgeInsets.only(top: Sizes.p20),
+              overlayColor: const MaterialStatePropertyAll(AppColor.poseidon),
+              labelStyle: Theme.of(context).textTheme.headlineMedium!,
+              tabs: const [
+                Tab(
+                  text: "About me",
+                ),
+                Tab(
+                  text: "Project",
+                ),
+                Tab(
+                  text: "Skill",
+                ),
+              ]),
+        ),
       ),
-      body: ListView(
+      body: TabBarView(
+        controller: _tabController,
         children: [
-          const ProfileContent(),
-          gapH12,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: Sizes.p18),
-            child: Divider(
-              height: 2.0,
-              color: Theme.of(context).iconTheme.color,
+          SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(Sizes.p24),
+              child: Column(
+                children: const [
+                  PhotoProfileWidget(min: 120.0, max: 150.0),
+                  ProfileContent(),
+                ],
+              ),
             ),
           ),
-          Container(
-            alignment: Alignment.center,
-            child: const TextHeadlineSmall(text: "Personal project"),
+          ProjectScreen(
+            heightImage: size.height,
+            marginContent: Sizes.p8,
           ),
-          gapH12,
-          const ProjectContent(),
+          const SkillScreen(),
         ],
       ),
     );

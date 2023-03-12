@@ -7,19 +7,27 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color(0xffffffff),
-      child: Padding(
-        padding: const EdgeInsets.all(Sizes.p8),
-        child: Text(
-          AppString.about,
-          style: Theme.of(context)
-              .textTheme
-              .titleSmall!
-              .copyWith(color: Colors.black),
-          textAlign: TextAlign.start,
-        ),
-      ),
-    );
+    return Padding(
+        padding: const EdgeInsets.all(Sizes.p16),
+        child: RichText(
+          text: TextSpan(
+            text: 'Hi, I am',
+            style: Theme.of(context).textTheme.displaySmall!,
+            children: [
+              TextSpan(
+                text: " ${AppString.fullName} ",
+                style: Theme.of(context).textTheme.displaySmall!.copyWith(
+                      color: Colors.lightBlue,
+                      fontWeight: FontWeight.w900,
+                      fontSize: Sizes.p48,
+                    ),
+              ),
+              TextSpan(
+                text: AppString.about,
+                style: Theme.of(context).textTheme.displaySmall!,
+              ),
+            ],
+          ),
+        ));
   }
 }

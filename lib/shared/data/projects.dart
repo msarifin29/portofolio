@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Projects {
   static List<ProjectModel> listProjects = [
     ProjectModel(
+        id: "1",
         title: 'My Bioskop',
         image: AppString.myBioskop,
         url: AppString.myBioskopUrl,
@@ -25,6 +26,7 @@ class Projects {
           }
         }),
     ProjectModel(
+        id: "2",
         title: 'Cassiere',
         image: AppString.cassiere,
         desc:
@@ -41,6 +43,25 @@ class Projects {
         ],
         onTap: () async {
           final Uri url = Uri.parse(AppString.cassiereUrl);
+          if (await canLaunchUrl(url)) {
+            await launchUrl(url);
+          } else {
+            throw 'Could not launch $url';
+          }
+        }),
+    ProjectModel(
+        id: "3",
+        title: 'SARANG',
+        image: AppString.sarang,
+        desc: "Aplikasi untuk mencari jodoh",
+        url: AppString.sarangUrl,
+        component: [
+          "Feature first Architecture",
+          "Shared Preferences Local Storage",
+          "Flutter Bloc State Management",
+        ],
+        onTap: () async {
+          final Uri url = Uri.parse(AppString.sarangUrl);
           if (await canLaunchUrl(url)) {
             await launchUrl(url);
           } else {
