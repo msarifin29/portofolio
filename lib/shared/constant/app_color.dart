@@ -8,4 +8,5 @@ class AppColor {
   static const Color rootBeer = Color(0xFF290E05);
   static const Color caffeLate = Color(0xFFC5B2A5);
   static const Color italyOrche = Color(0xFFBC7B36);
+  static const Color orange = Color(0xFFFEA948);
 }

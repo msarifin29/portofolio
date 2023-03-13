@@ -32,6 +32,7 @@ class ProjectScreen extends StatelessWidget {
           margin: EdgeInsets.symmetric(horizontal: marginContent),
           child: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image(image: AssetImage(item[itemIndex].image)),
                 gapH20,
@@ -46,6 +47,7 @@ class ProjectScreen extends StatelessWidget {
         );
       },
       options: CarouselOptions(
+        autoPlay: true,
         height: heightImage,
         aspectRatio: 16 / 9,
         enlargeCenterPage: true,

@@ -20,36 +20,6 @@ class ProfileContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final List<Widget> _listContent = [
-      // gapH12,
-      // Text(
-      //   AppString.fullName,
-      //   style: Theme.of(context).textTheme.displayMedium!,
-      //   textAlign: TextAlign.center,
-      // ),
-      // gapH12,
-      // Text(
-      //   AppString.jobs,
-      //   style: Theme.of(context).textTheme.displayMedium!.copyWith(
-      //         fontSize: Sizes.p32,
-      //       ),
-      // ),
-      // gapH12,
-      // Row(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      //   children: [
-      //     Icon(
-      //       Icons.location_pin,
-      //       color: Theme.of(context).primaryIconTheme.color,
-      //     ),
-      //     Text(
-      //       AppString.city,
-      //       style: Theme.of(context)
-      //           .textTheme
-      //           .displayMedium!
-      //           .copyWith(fontSize: Sizes.p18),
-      //     ),
-      //   ],
-      // ),
       gapH12,
       const SizedBox(
         child: AboutMe(),

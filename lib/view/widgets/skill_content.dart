@@ -23,89 +23,88 @@ class SkillContent extends StatelessWidget {
       height: heightBox,
       padding: EdgeInsets.only(top: padding),
       child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Card(
-              color: Theme.of(context).cardColor,
-              child: Column(
+        child: Padding(
+          padding: const EdgeInsets.only(left: Sizes.p20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Hard Skill",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayMedium
+                        ?.copyWith(fontSize: 28.9),
                   ),
                   gapH24,
-                  Column(
+                  Wrap(
+                    spacing: Sizes.p20,
+                    runSpacing: Sizes.p20,
                     children: Skill.hardSkill.map((e) {
                       final title = e["title"] as String;
                       final persentase = e["persentase"] as double;
-                      return ListTile(
-                        title: Text(
+                      return CircularPercentIndicator(
+                        radius: 80.0,
+                        lineWidth: Sizes.p16,
+                        animation: true,
+                        percent: persentase / 100,
+                        center: Text(
+                          "$persentase %",
+                          style: Theme.of(context).textTheme.displaySmall!,
+                        ),
+                        footer: Text(
                           title,
-                          style: Theme.of(context).textTheme.headlineMedium!,
+                          style: Theme.of(context).textTheme.headlineSmall!,
                         ),
-                        subtitle: Row(
-                          children: [
-                            LinearPercentIndicator(
-                              width: widthBox,
-                              lineHeight: Sizes.p18,
-                              percent: persentase / 100,
-                              barRadius: const Radius.circular(Sizes.p4),
-                              progressColor: AppColor.italyOrche,
-                            ),
-                            Text(
-                              "$persentase %",
-                              style: Theme.of(context).textTheme.titleMedium!,
-                            )
-                          ],
-                        ),
+                        circularStrokeCap: CircularStrokeCap.round,
+                        progressColor: AppColor.orange,
                       );
                     }).toList(),
                   ),
                 ],
               ),
-            ),
-            gapH32,
-            Card(
-              color: Theme.of(context).cardColor,
-              child: Column(
+              gapH32,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Soft Skill",
-                    style: Theme.of(context).textTheme.headlineMedium,
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayMedium
+                        ?.copyWith(fontSize: 38.0),
                   ),
                   gapH24,
-                  Column(
+                  Wrap(
+                    spacing: Sizes.p20,
+                    runSpacing: Sizes.p20,
                     children: Skill.softSkill.map((e) {
                       final title = e["title"] as String;
                       final persentase = e["persentase"] as double;
-                      return ListTile(
-                        title: Text(
+                      return CircularPercentIndicator(
+                        radius: 80.0,
+                        lineWidth: Sizes.p16,
+                        animation: true,
+                        percent: persentase / 100,
+                        center: Text(
+                          "$persentase %",
+                          style: Theme.of(context).textTheme.displaySmall!,
+                        ),
+                        footer: Text(
                           title,
-                          style: Theme.of(context).textTheme.headlineMedium!,
+                          style: Theme.of(context).textTheme.headlineSmall!,
                         ),
-                        subtitle: Row(
-                          children: [
-                            LinearPercentIndicator(
-                              width: widthBox,
-                              lineHeight: Sizes.p18,
-                              percent: persentase / 100,
-                              barRadius: const Radius.circular(Sizes.p4),
-                              progressColor: AppColor.italyOrche,
-                            ),
-                            Text(
-                              "$persentase %",
-                              style: Theme.of(context).textTheme.titleMedium!,
-                            )
-                          ],
-                        ),
+                        circularStrokeCap: CircularStrokeCap.round,
+                        progressColor: AppColor.orange,
                       );
                     }).toList(),
                   ),
                 ],
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );

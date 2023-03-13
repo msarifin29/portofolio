@@ -21,7 +21,7 @@ class PersonalScreen extends StatelessWidget {
         padding: const EdgeInsets.all(Sizes.p32),
         child: Row(
           children: [
-            Expanded(
+            const Expanded(
               child: ProfileContent(),
             ),
             Expanded(

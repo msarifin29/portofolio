@@ -17,9 +17,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      // title: const Text("Portofolio"),
-      // centerTitle: true,
-      // elevation: 1.0,
       bottom: widget.tabBar,
     );
   }
