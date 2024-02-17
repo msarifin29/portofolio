@@ -24,6 +24,7 @@ class PersonalScreen extends StatelessWidget {
             const Expanded(
               child: ProfileContent(),
             ),
+            gapW20,
             Expanded(
               child: PhotoProfileWidget(
                 min: min,

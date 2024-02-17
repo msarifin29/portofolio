@@ -9,7 +9,7 @@ ThemeData darkTheme() => ThemeData(
       cardColor: AppColor.night,
       appBarTheme: AppBarTheme(
         backgroundColor: AppColor.night,
-        titleTextStyle: GoogleFonts.poppins(
+        titleTextStyle: GoogleFonts.roboto(
             color: Colors.white,
             fontSize: Sizes.p32,
             fontWeight: FontWeight.bold),
@@ -20,39 +20,39 @@ ThemeData darkTheme() => ThemeData(
       ),
       scaffoldBackgroundColor: AppColor.night,
       textTheme: TextTheme(
-        displayMedium: GoogleFonts.poppins(
+        displayMedium: GoogleFonts.roboto(
           fontSize: Sizes.p48,
           fontWeight: FontWeight.w700,
           color: Colors.white,
         ),
-        displaySmall: GoogleFonts.poppins(
+        displaySmall: GoogleFonts.roboto(
           fontSize: Sizes.p32,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        headlineMedium: GoogleFonts.poppins(
+        headlineMedium: GoogleFonts.roboto(
           fontSize: Sizes.p20,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
-        headlineSmall: GoogleFonts.poppins(
+        headlineSmall: GoogleFonts.roboto(
             fontSize: Sizes.p20,
             fontWeight: FontWeight.w700,
             color: Colors.white),
-        titleMedium: GoogleFonts.poppins(
+        titleMedium: GoogleFonts.roboto(
             fontSize: Sizes.p18,
             fontWeight: FontWeight.w500,
             color: Colors.white),
-        titleSmall: GoogleFonts.poppins(
+        titleSmall: GoogleFonts.roboto(
           fontSize: Sizes.p12,
           fontWeight: FontWeight.w600,
           color: const Color(0xFFFFFFFF),
         ),
-        labelMedium: GoogleFonts.poppins(
+        labelMedium: GoogleFonts.roboto(
             fontSize: Sizes.p12,
             fontWeight: FontWeight.w600,
             color: Colors.white),
-        bodyMedium: GoogleFonts.poppins(
+        bodyMedium: GoogleFonts.roboto(
             fontSize: Sizes.p12,
             fontWeight: FontWeight.w600,
             color: Colors.orange),
@@ -64,7 +64,7 @@ ThemeData lightTheme() => ThemeData(
       cardColor: AppColor.snowWhite,
       appBarTheme: AppBarTheme(
         backgroundColor: AppColor.snowWhite,
-        titleTextStyle: GoogleFonts.poppins(
+        titleTextStyle: GoogleFonts.roboto(
             color: AppColor.night,
             fontSize: Sizes.p32,
             fontWeight: FontWeight.bold),
@@ -77,39 +77,39 @@ ThemeData lightTheme() => ThemeData(
       ),
       scaffoldBackgroundColor: AppColor.snowWhite,
       textTheme: TextTheme(
-        displayMedium: GoogleFonts.poppins(
+        displayMedium: GoogleFonts.roboto(
           fontSize: Sizes.p48,
           fontWeight: FontWeight.w700,
           color: AppColor.night,
         ),
-        displaySmall: GoogleFonts.poppins(
+        displaySmall: GoogleFonts.roboto(
           fontSize: Sizes.p32,
           fontWeight: FontWeight.w600,
           color: AppColor.rootBeer,
         ),
-        headlineMedium: GoogleFonts.poppins(
+        headlineMedium: GoogleFonts.roboto(
           fontSize: Sizes.p20,
           fontWeight: FontWeight.w600,
           color: AppColor.night,
         ),
-        headlineSmall: GoogleFonts.poppins(
+        headlineSmall: GoogleFonts.roboto(
           fontSize: Sizes.p20,
           fontWeight: FontWeight.w700,
           color: AppColor.nokiaBlue,
         ),
-        titleMedium: GoogleFonts.poppins(
+        titleMedium: GoogleFonts.roboto(
             fontSize: Sizes.p18,
             fontWeight: FontWeight.w500,
             color: AppColor.night),
-        titleSmall: GoogleFonts.poppins(
+        titleSmall: GoogleFonts.roboto(
             fontSize: Sizes.p12,
             fontWeight: FontWeight.w600,
             color: AppColor.night),
-        labelMedium: GoogleFonts.poppins(
+        labelMedium: GoogleFonts.roboto(
             fontSize: Sizes.p12,
             fontWeight: FontWeight.w600,
             color: AppColor.night),
-        bodyMedium: GoogleFonts.poppins(
+        bodyMedium: GoogleFonts.roboto(
             fontSize: Sizes.p12,
             fontWeight: FontWeight.w600,
             color: AppColor.night),

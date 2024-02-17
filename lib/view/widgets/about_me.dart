@@ -8,8 +8,9 @@ class AboutMe extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
         padding: const EdgeInsets.all(Sizes.p16),
+        decoration: const BoxDecoration(color: AppColor.poseidon),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -21,8 +22,8 @@ class AboutMe extends StatelessWidget {
                   TextSpan(
                     text: " ${AppString.fullName} ",
                     style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                          color: AppColor.nokiaBlue,
-                          fontWeight: FontWeight.bold,
+                          color: AppColor.italyOrche,
+                          fontWeight: FontWeight.w900,
                         ),
                   ),
                 ],
