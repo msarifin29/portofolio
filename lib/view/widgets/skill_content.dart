@@ -17,6 +17,7 @@ class SkillContentRowWidget extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: const Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           FrontEndSkillWidget(),
