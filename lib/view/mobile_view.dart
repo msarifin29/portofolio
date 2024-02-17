@@ -54,11 +54,11 @@ class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-          SingleChildScrollView(
+          const SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.all(Sizes.p24),
+              padding: EdgeInsets.all(Sizes.p24),
               child: Column(
-                children: const [
+                children: [
                   PhotoProfileWidget(min: 120.0, max: 150.0),
                   ProfileContent(),
                 ],

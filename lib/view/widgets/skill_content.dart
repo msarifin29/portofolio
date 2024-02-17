@@ -7,11 +7,11 @@ import '../../shared/data/skill.dart';
 
 class SkillContent extends StatelessWidget {
   const SkillContent({
-    Key? key,
+    super.key,
     required this.widthBox,
     this.heightBox,
     required this.padding,
-  }) : super(key: key);
+  });
 
   final double widthBox;
   final double? heightBox;

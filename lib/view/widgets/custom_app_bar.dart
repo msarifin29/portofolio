@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget {
   const CustomAppBar({
-    Key? key,
+    super.key,
     required this.tabBar,
-  }) : super(key: key);
+  });
 
   final TabBar tabBar;
 

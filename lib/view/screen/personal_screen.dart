@@ -6,10 +6,10 @@ import '../widgets/profile_content.dart';
 
 class PersonalScreen extends StatelessWidget {
   const PersonalScreen({
-    Key? key,
+    super.key,
     required this.min,
     required this.max,
-  }) : super(key: key);
+  });
 
   final double min;
   final double max;

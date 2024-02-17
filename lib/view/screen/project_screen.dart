@@ -10,10 +10,10 @@ import 'package:portofolio/view/widgets/profile_content.dart';
 
 class ProjectScreen extends StatelessWidget {
   const ProjectScreen({
-    Key? key,
+    super.key,
     required this.heightImage,
     this.marginContent = Sizes.p100,
-  }) : super(key: key);
+  });
 
   final double heightImage;
   final double marginContent;

@@ -13,8 +13,8 @@ import '../../shared/constant/sizes.dart';
 
 class ProfileContent extends StatelessWidget {
   const ProfileContent({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +63,11 @@ class ProfileContent extends StatelessWidget {
 
 class InformationProfileWidget extends StatelessWidget {
   const InformationProfileWidget({
-    Key? key,
+    super.key,
     required this.onTap,
     required this.image,
     required this.title,
-  }) : super(key: key);
+  });
 
   final VoidCallback onTap;
   final Widget image;

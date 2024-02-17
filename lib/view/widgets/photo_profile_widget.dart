@@ -5,10 +5,10 @@ import '../../shared/constant/app_string.dart';
 
 class PhotoProfileWidget extends StatelessWidget {
   const PhotoProfileWidget({
-    Key? key,
+    super.key,
     required this.min,
     required this.max,
-  }) : super(key: key);
+  });
 
   final double min;
   final double max;
