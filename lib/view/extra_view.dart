@@ -27,8 +27,6 @@ class _ExtraViewState extends State<ExtraView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60.0),
@@ -55,12 +53,10 @@ class _ExtraViewState extends State<ExtraView> with TickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          const PersonalScreen(min: 200.0, max: 300.0),
-          ProjectScreen(
-            heightImage: size.height,
-          ),
-          const SkillScreen(),
+        children: const [
+          PersonalScreen(min: 200.0, max: 300.0),
+          ProjectScreen(),
+          SkillScreen(),
         ],
       ),
     );

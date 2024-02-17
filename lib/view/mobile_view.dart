@@ -28,7 +28,6 @@ class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(60.0),
@@ -55,8 +54,8 @@ class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          const SingleChildScrollView(
+        children: const [
+          SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.all(Sizes.p24),
               child: Column(
@@ -67,11 +66,8 @@ class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
               ),
             ),
           ),
-          ProjectScreen(
-            heightImage: size.height,
-            marginContent: Sizes.p8,
-          ),
-          const SkillScreen(),
+          ProjectScreen(),
+          SkillScreen(),
         ],
       ),
     );
