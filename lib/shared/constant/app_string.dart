@@ -21,6 +21,10 @@ class AppString {
   static const wa = "assets/images/wa.svg";
   static const logoEmail = "assets/images/email.svg";
   static const sarang = "assets/images/sarang.png";
+  static const flutter = "assets/images/icons8-flutter.svg";
+  static const go = "assets/images/icons8-go.svg";
+  static const mysql = "assets/images/icons8-mysql.svg";
+  static const postgres = "assets/images/icons8-postgresql.svg";
 
   // Url github project
   static const String myBioskopUrl =
