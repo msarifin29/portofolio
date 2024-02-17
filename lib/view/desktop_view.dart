@@ -21,7 +21,7 @@ class _DesktopViewState extends State<DesktopView>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -45,19 +45,28 @@ class _DesktopViewState extends State<DesktopView>
                   Tab(
                     text: "Project",
                   ),
-                  Tab(
-                    text: "Skill",
-                  ),
                 ]),
           ),
         ),
         body: TabBarView(
           controller: _tabController,
-          children: const [
-            PersonalScreen(min: 200.0, max: 250.0),
-            ProjectScreen(),
-            SkillScreen(),
+          children: [
+            _AboutMeDekstop(),
+            const ProjectScreen(),
           ],
         ));
+  }
+}
+
+class _AboutMeDekstop extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        PersonalScreen(min: 100.0, max: 150.0),
+        SkillScreen(),
+      ],
+    );
   }
 }

@@ -7,13 +7,11 @@ class SkillScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraint) {
-        if (constraint.maxWidth < Breakpoint.tablet) {
-          return const SkillContentWidget();
-        }
-        return const SkillContentRowWidget();
-      },
-    );
+    return LayoutBuilder(builder: (context, constraint) {
+      if (constraint.maxWidth < Breakpoint.extra) {
+        return const SkillContentWidget();
+      }
+      return const SkillContentRowWidget();
+    });
   }
 }

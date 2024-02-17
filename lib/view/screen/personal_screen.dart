@@ -17,22 +17,16 @@ class PersonalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(Sizes.p32),
-        child: Row(
-          children: [
-            const Expanded(
-              child: ProfileContent(),
-            ),
-            gapW20,
-            Expanded(
-              child: PhotoProfileWidget(
-                min: min,
-                max: max,
-              ),
-            )
-          ],
-        ),
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          PhotoProfileWidget(
+            min: min,
+            max: max,
+          ),
+          gapH20,
+          const ProfileContent(),
+        ],
       ),
     );
   }

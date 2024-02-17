@@ -29,7 +29,13 @@ class ProjectScreen extends StatelessWidget {
               children: [
                 TitleProjectWidget(title: item[itemIndex].title),
                 gapH20,
-                Image.network(item[itemIndex].imageUrl),
+                Image.network(
+                  item[itemIndex].imageUrl,
+                  repeat: ImageRepeat.repeat,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(Icons.error);
+                  },
+                ),
                 gapH20,
                 Row(
                   mainAxisSize: MainAxisSize.min,
@@ -87,7 +93,7 @@ class ProjectScreen extends StatelessWidget {
       },
       options: CarouselOptions(
         autoPlay: true,
-        height: size.height,
+        height: size.height * 0.9,
         aspectRatio: 16 / 9,
         enlargeCenterPage: true,
       ),

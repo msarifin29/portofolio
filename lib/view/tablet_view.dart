@@ -52,13 +52,7 @@ class _TabletViewState extends State<TabletView> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: const [
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                PersonalScreen(min: 150.0, max: 200.0),
-              ],
-            ),
-          ),
+          PersonalScreen(min: 100.0, max: 150.0),
           ProjectScreen(),
           SkillScreen(),
         ],

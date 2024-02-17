@@ -39,7 +39,7 @@ class SkillContentWidget extends StatelessWidget {
       height: size,
       padding: const EdgeInsets.all(20.0),
       child: const SingleChildScrollView(
-        padding: EdgeInsets.only(left: Sizes.p20),
+        padding: EdgeInsets.all(Sizes.p20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
