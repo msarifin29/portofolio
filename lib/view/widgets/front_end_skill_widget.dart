@@ -41,14 +41,24 @@ class FrontEndSkillWidget extends StatelessWidget {
 
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          'Front End',
+          style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                fontSize: 24.0,
+                color: AppColor.nokiaBlue,
+              ),
+        ),
+        gapH20,
         const TitleSkillWidget(
           text: 'Flutter',
           image: AppString.flutter,
         ),
         gapH16,
-        ...contents,
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: contents,
+        ),
       ],
     );
   }

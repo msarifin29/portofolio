@@ -26,7 +26,7 @@ class TitleSkillWidget extends StatelessWidget {
       label: Text(
         text,
         style: Theme.of(context).textTheme.displayMedium?.copyWith(
-              fontSize: 24.0,
+              fontSize: 20.0,
               color: AppColor.night,
             ),
       ),

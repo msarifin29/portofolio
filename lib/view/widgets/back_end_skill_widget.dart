@@ -34,9 +34,18 @@ class BackEndSkillIwdget extends StatelessWidget {
     });
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Text(
+          'Back End',
+          style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                fontSize: 24.0,
+                color: AppColor.nokiaBlue,
+              ),
+        ),
+        gapH20,
         const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TitleSkillWidget(text: 'Go', image: AppString.go),
             gapW16,
@@ -45,6 +54,24 @@ class BackEndSkillIwdget extends StatelessWidget {
         ),
         gapH16,
         ...contents,
+        gapH20,
+        const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TitleSkillWidget(text: 'My SQL', image: AppString.mysql),
+            gapW16,
+            Text('Basic'),
+          ],
+        ),
+        gapH20,
+        const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TitleSkillWidget(text: 'Postgresql', image: AppString.postgres),
+            gapW16,
+            Text('Basic'),
+          ],
+        ),
       ],
     );
   }
