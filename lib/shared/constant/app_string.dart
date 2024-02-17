@@ -8,8 +8,8 @@ class AppString {
   static const String email = "msarifin29@gmail.com";
   static const String jobs = "Flutter Developer";
   static const String githubName = "msarifin29";
-  static String about =
-      "as Flutter Developer with $experience year of experience. I possess a solid understanding of various programming languages and platforms. ";
+  static String aboutFlutter =
+      "Flutter developer with $experience years of experience in cross-platform mobile app development. I create attractive user interfaces for iOS, Android, and web platforms.";
 
   // assets images
   static const myBioskop = "assets/images/project2.png";

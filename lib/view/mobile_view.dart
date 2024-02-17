@@ -36,8 +36,10 @@ class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
           tabBar: TabBar(
               controller: _tabController,
               indicatorPadding: const EdgeInsets.only(top: Sizes.p20),
-              overlayColor: const MaterialStatePropertyAll(AppColor.poseidon),
-              labelStyle: Theme.of(context).textTheme.headlineMedium!,
+              overlayColor: const MaterialStatePropertyAll(AppColor.nokiaBlue),
+              labelStyle: Theme.of(context).textTheme.headlineSmall,
+              splashBorderRadius: BorderRadius.circular(20.0),
+              indicatorColor: AppColor.nokiaBlue,
               tabs: const [
                 Tab(
                   text: "About me",

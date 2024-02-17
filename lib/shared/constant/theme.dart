@@ -6,9 +6,9 @@ import 'app_color.dart';
 
 ThemeData darkTheme() => ThemeData(
       primaryIconTheme: const IconThemeData(color: Colors.white),
-      cardColor: AppColor.poseidon,
+      cardColor: AppColor.night,
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColor.poseidon,
+        backgroundColor: AppColor.night,
         titleTextStyle: GoogleFonts.poppins(
             color: Colors.white,
             fontSize: Sizes.p32,
@@ -18,7 +18,7 @@ ThemeData darkTheme() => ThemeData(
       iconTheme: const IconThemeData(
         color: AppColor.snowWhite,
       ),
-      scaffoldBackgroundColor: AppColor.poseidon,
+      scaffoldBackgroundColor: AppColor.night,
       textTheme: TextTheme(
         displayMedium: GoogleFonts.poppins(
           fontSize: Sizes.p48,

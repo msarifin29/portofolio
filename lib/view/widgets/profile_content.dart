@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portofolio/shared/constant/app_color.dart';
 
 import 'package:portofolio/shared/constant/break_point.dart';
 import 'package:portofolio/shared/utils/funtion_helper.dart';
@@ -25,11 +26,11 @@ class ProfileContent extends StatelessWidget {
         child: AboutMe(),
       ),
       gapH12,
-      InformationProfileWidget(
-        onTap: FunctionHelper.init.urlWa,
-        image: SvgPicture.asset(AppString.wa),
-        title: AppString.phone,
-      ),
+      // InformationProfileWidget(
+      //   onTap: FunctionHelper.init.urlWa,
+      //   image: SvgPicture.asset(AppString.wa),
+      //   title: AppString.phone,
+      // ),
       InformationProfileWidget(
         onTap: FunctionHelper.init.urlEmail,
         image: SvgPicture.asset(AppString.logoEmail),
@@ -77,6 +78,8 @@ class InformationProfileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
+      hoverColor: AppColor.nokiaBlue,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
       leading: Container(
         height: Sizes.p32,
         width: Sizes.p32,
