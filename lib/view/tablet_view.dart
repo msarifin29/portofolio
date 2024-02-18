@@ -1,61 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:portofolio/shared/constant/sizes.dart';
-import 'package:portofolio/view/screen/personal_screen.dart';
-import 'package:portofolio/view/screen/project_screen.dart';
-import 'package:portofolio/view/screen/skill_screen.dart';
 
-import '../shared/constant/app_color.dart';
-import 'widgets/custom_app_bar.dart';
+import 'screen/project_screen.dart';
+import 'screen/skill_screen.dart';
+import 'widgets/photo_profile_widget.dart';
+import 'widgets/profile_content.dart';
+import 'widgets/title_chip_widget.dart';
 
-class TabletView extends StatefulWidget {
+class TabletView extends StatelessWidget {
   const TabletView({super.key});
 
   @override
-  State<TabletView> createState() => _TabletViewState();
-}
-
-class _TabletViewState extends State<TabletView> with TickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 3, vsync: this);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
-        child: CustomAppBar(
-          tabBar: TabBar(
-              controller: _tabController,
-              indicatorPadding: const EdgeInsets.only(top: Sizes.p20),
-              overlayColor: const MaterialStatePropertyAll(AppColor.nokiaBlue),
-              labelStyle: Theme.of(context).textTheme.headlineMedium!,
-              splashBorderRadius: BorderRadius.circular(20.0),
-              indicatorColor: AppColor.nokiaBlue,
-              tabs: const [
-                Tab(
-                  text: "About me",
-                ),
-                Tab(
-                  text: "Project",
-                ),
-                Tab(
-                  text: "Skill",
-                ),
-              ]),
+    return const SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TitleChipWidget(text: 'About me'),
+              gapH16,
+              PhotoProfileWidget(min: 120.0, max: 150.0),
+              gapH20,
+              ProfileContent(),
+              gapH20,
+              TitleChipWidget(text: 'Project'),
+              ProjectScreen(),
+              gapH20,
+              TitleChipWidget(text: 'Skill'),
+              SkillScreen(),
+            ],
+          ),
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: const [
-          PersonalScreen(min: 100.0, max: 150.0),
-          ProjectScreen(),
-          SkillScreen(),
-        ],
       ),
     );
   }

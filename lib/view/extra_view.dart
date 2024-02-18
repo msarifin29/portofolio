@@ -3,70 +3,37 @@ import 'package:flutter/material.dart';
 
 import 'package:portofolio/shared/constant/sizes.dart';
 import 'package:portofolio/view/screen/project_screen.dart';
+import 'package:portofolio/view/widgets/about_me_and_skill_widget.dart';
 
-import '../shared/constant/app_color.dart';
-import 'screen/personal_screen.dart';
-import 'screen/skill_screen.dart';
-import 'widgets/custom_app_bar.dart';
+import 'widgets/title_chip_widget.dart';
 
-class ExtraView extends StatefulWidget {
+class ExtraView extends StatelessWidget {
   const ExtraView({super.key});
 
   @override
-  State<ExtraView> createState() => _ExtraViewState();
-}
-
-class _ExtraViewState extends State<ExtraView> with TickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0),
-        child: CustomAppBar(
-          tabBar: TabBar(
-              controller: _tabController,
-              indicatorPadding: const EdgeInsets.only(top: Sizes.p20),
-              overlayColor: const MaterialStatePropertyAll(AppColor.nokiaBlue),
-              labelStyle: Theme.of(context).textTheme.headlineMedium!,
-              splashBorderRadius: BorderRadius.circular(20.0),
-              indicatorColor: AppColor.nokiaBlue,
-              tabs: const [
-                Tab(
-                  text: "About me",
-                ),
-                Tab(
-                  text: "Project",
-                )
-              ]),
+    return SafeArea(
+      child: Scaffold(
+        body: Row(
+          children: [
+            const Expanded(child: AboutMeAndSkillWidget()),
+            Expanded(child: _ProjectExtra()),
+          ],
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: [
-          _AboutMeExtra(),
-          const ProjectScreen(),
-        ],
       ),
     );
   }
 }
 
-class _AboutMeExtra extends StatelessWidget {
+class _ProjectExtra extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return const Column(
       children: [
-        PersonalScreen(min: 100.0, max: 150.0),
-        SkillScreen(),
+        gapH8,
+        TitleChipWidget(text: 'Project'),
+        gapH16,
+        ProjectScreen(),
       ],
     );
   }

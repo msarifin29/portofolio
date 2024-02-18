@@ -5,6 +5,7 @@ import 'package:portofolio/shared/constant/sizes.dart';
 import 'package:portofolio/view/screen/project_screen.dart';
 import 'package:portofolio/view/screen/skill_screen.dart';
 import 'package:portofolio/view/widgets/profile_content.dart';
+import 'package:portofolio/view/widgets/title_chip_widget.dart';
 
 import 'widgets/photo_profile_widget.dart';
 
@@ -18,41 +19,24 @@ class MobileView extends StatefulWidget {
 class _MobileViewState extends State<MobileView> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(Sizes.p24),
+          padding: EdgeInsets.all(Sizes.p24),
           child: Column(
             children: [
-              Text(
-                "About me",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineLarge!
-                    .copyWith(color: Colors.white),
-              ),
+              gapH8,
+              TitleChipWidget(text: 'About me'),
               gapH16,
-              const PhotoProfileWidget(min: 120.0, max: 150.0),
+              PhotoProfileWidget(min: 120.0, max: 150.0),
               gapH20,
-              const ProfileContent(),
+              ProfileContent(),
               gapH20,
-              Text(
-                "Project",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineLarge!
-                    .copyWith(color: Colors.white),
-              ),
-              const ProjectScreen(),
+              TitleChipWidget(text: 'Project'),
+              ProjectScreen(),
               gapH20,
-              Text(
-                "Skill",
-                style: Theme.of(context)
-                    .textTheme
-                    .headlineLarge!
-                    .copyWith(color: Colors.white),
-              ),
-              const SkillScreen(),
+              TitleChipWidget(text: 'Skill'),
+              SkillScreen(),
             ],
           ),
         ),

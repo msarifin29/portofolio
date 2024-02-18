@@ -17,11 +17,14 @@ class AboutMe extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: 'Hi, I\'m',
-                style: Theme.of(context).textTheme.headlineSmall,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .copyWith(color: AppColor.snowWhite),
                 children: [
                   TextSpan(
                     text: " ${AppString.fullName} ",
-                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           color: AppColor.italyOrche,
                           fontWeight: FontWeight.w900,
                         ),
@@ -29,10 +32,12 @@ class AboutMe extends StatelessWidget {
                 ],
               ),
             ),
-            gapH8,
             Text(
               AppString.aboutFlutter,
-              style: Theme.of(context).textTheme.headlineSmall,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: AppColor.snowWhite),
             ),
           ],
         ));
